@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import { updateProfile } from "firebase/auth";
 import DocumentTitle from "./DocumentTitle";
 
+import toast, { Toaster } from "react-hot-toast";
+
 const Register = () => {
+  const [error, setError] = useState("");
   DocumentTitle("Deluxe | Register");
   const { createUser } = useContext(AuthContext);
 
@@ -16,13 +19,29 @@ const Register = () => {
     const name = form.get("name");
     const photo = form.get("photo");
     console.log(email, password, name, photo);
+
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long.");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter.");
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
-        console.log(result);
+        toast.success("You have successfully registered");
         updateProfile(result.user, {
           displayName: name,
           photoURL: photo,
         });
+        setError("");
       })
       .catch((error) => {
         console.log(error);
@@ -31,6 +50,7 @@ const Register = () => {
 
   return (
     <div>
+      <Toaster />
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
@@ -61,7 +81,7 @@ const Register = () => {
                 </label>
                 <input
                   name="photo"
-                  type="url"
+                  type="text"
                   placeholder="image"
                   className="input input-bordered"
                 />
