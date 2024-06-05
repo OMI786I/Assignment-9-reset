@@ -7,6 +7,8 @@ const Details = ({ data1 }) => {
     area,
     location,
     facilities,
+    id,
+    price,
   } = data1;
 
   return (
@@ -15,9 +17,19 @@ const Details = ({ data1 }) => {
         <img src={image} className="  max-h-60 w-full rounded-xl"></img>
       </div>
       <div>
+        <h1 className="text-green-600">{id}</h1>
         <h1 className="md:text-3xl text-2xl">{estate_title}</h1>
+
         <p className="text-gray-700 mt-3 font-bold"> {description}</p>
-        <div className=" border-t-2 border-b-2 p-1 mt-3 ">{status}</div>
+        <div className=" border-t-2 border-b-2 p-1 mt-3 ">
+          <p>
+            <span className="font-bold">price:</span> {price}
+          </p>
+          <p>
+            {" "}
+            <span className="font-bold">status:</span> {status}{" "}
+          </p>
+        </div>
         <p className="mt-3">
           <span className="font-bold block ">Area </span> {area}
           <span className="font-bold block ">Location </span> {location}
