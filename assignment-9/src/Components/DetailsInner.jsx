@@ -4,6 +4,7 @@ import { listedData } from "./LocaleStore";
 const DetailsInner = () => {
   const data = useLoaderData();
   const { id } = useParams();
+  const numberId = parseInt(id);
 
   const data2 = data.find((data) => data.id == id);
   console.log(data2);
@@ -50,7 +51,7 @@ const DetailsInner = () => {
         </div>
         <button
           className="btn btn-success mt-10 text-white"
-          onClick={() => listedData(id)}
+          onClick={() => listedData(numberId)}
         >
           Wishlist
         </button>
