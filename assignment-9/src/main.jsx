@@ -10,6 +10,7 @@ import Register from "./Components/Register.jsx";
 import AuthProvider from "./Components/AuthProvider.jsx";
 import DetailsInner from "./Components/DetailsInner.jsx";
 import PrivateRoute from "./Components/PrivateRoute.jsx";
+import Wishlist from "./Components/Wishlist.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch(`/data.json`),
+      },
+      {
+        path: "/wishlist",
+        element: (
+          <PrivateRoute>
+            <Wishlist></Wishlist>
+          </PrivateRoute>
+        ),
       },
     ],
   },

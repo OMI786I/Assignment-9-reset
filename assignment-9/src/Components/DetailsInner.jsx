@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { listedData } from "./LocaleStore";
 
 const DetailsInner = () => {
   const data = useLoaderData();
@@ -47,6 +48,12 @@ const DetailsInner = () => {
             <span className="font-bold">{data2.location}</span>
           </div>
         </div>
+        <button
+          className="btn btn-success mt-10 text-white"
+          onClick={() => listedData(id)}
+        >
+          Wishlist
+        </button>
       </div>
     </div>
   );

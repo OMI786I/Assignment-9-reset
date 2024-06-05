@@ -21,6 +21,11 @@ const Navbar = () => {
           Update Profile
         </button>
       </NavLink>
+      <NavLink to="/wishlist">
+        <button className="hover:border-green-500 border-transparent border-2 duration-150 hover:text-green-500 font-bold p-2 rounded-lg focus:border-green-500 focus:text-green-500">
+          Wishlist
+        </button>
+      </NavLink>
     </div>
   );
 
