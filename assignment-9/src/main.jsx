@@ -8,6 +8,7 @@ import Home from "./Components/Home.jsx";
 import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AuthProvider from "./Components/AuthProvider.jsx";
+import DetailsInner from "./Components/DetailsInner.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/data/:id",
+        element: <DetailsInner></DetailsInner>,
+        loader: () => fetch(`data.json`),
       },
     ],
   },

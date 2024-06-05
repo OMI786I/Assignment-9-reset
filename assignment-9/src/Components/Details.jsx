@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Details = ({ data1 }) => {
   const {
     estate_title,
@@ -48,7 +50,10 @@ const Details = ({ data1 }) => {
         </div>
 
         <div className="flex gap-6 mt-7">
-          <button className="btn"> View Property </button>
+          <Link to={`/data/${id}`}>
+            {" "}
+            <button className="btn"> View Property </button>
+          </Link>
         </div>
       </div>
     </div>
