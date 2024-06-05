@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { listedData } from "./LocaleStore";
+import DocumentTitle from "./DocumentTitle";
 
 const DetailsInner = () => {
   const data = useLoaderData();
@@ -8,7 +9,7 @@ const DetailsInner = () => {
 
   const data2 = data.find((data) => data.id == id);
   console.log(data2);
-
+  DocumentTitle(`Deluxe | ${data2.estate_title}`);
   return (
     <div className="flex  md:flex-row flex-col gap-4 mt-10">
       <img
