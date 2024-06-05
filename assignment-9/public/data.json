@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Oceanfront Villa",
+    "segment_name": "Luxury",
+    "description": "A stunning oceanfront villa with panoramic sea views and private beach access.",
+    "price": "$3,500,000",
+    "status": "sale",
+    "area": "5000 sqft",
+    "location": "Malibu, CA",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "home theater",
+      "private beach"
+    ],
+    "image": "https://i.ibb.co/cvFCXCg/pexels-rpnickson-2631613.jpg",
+    "view_property": "https://example.com/oceanfront_villa"
+  },
+  {
+    "id": 2,
+    "estate_title": "Penthouse Suite",
+    "segment_name": "Luxury",
+    "description": "An elegant penthouse suite in the heart of the city with a rooftop garden and stunning skyline views.",
+    "price": "$2,800,000",
+    "status": "sale",
+    "area": "3500 sqft",
+    "location": "New York, NY",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "rooftop garden",
+      "gym"
+    ],
+    "image": "https://i.ibb.co/9wqSQZK/pexels-timothy-huliselan-205951426-20507713.jpg",
+    "view_property": "https://example.com/penthouse_suite"
+  },
+  {
+    "id": 3,
+    "estate_title": "Mountain Retreat",
+    "segment_name": "Luxury",
+    "description": "A serene mountain retreat with breathtaking views and luxurious amenities.",
+    "price": "$2,200,000",
+    "status": "sale",
+    "area": "4500 sqft",
+    "location": "Aspen, CO",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "sauna",
+      "fireplace"
+    ],
+    "image": "https://i.ibb.co/BLX17Kj/pexels-lory-18905538-6485368.jpg",
+    "view_property": "https://example.com/mountain_retreat"
+  },
+  {
+    "id": 4,
+    "estate_title": "Downtown Loft",
+    "segment_name": "Luxury",
+    "description": "A modern downtown loft with floor-to-ceiling windows and a contemporary design.",
+    "price": "$1,900,000",
+    "status": "sale",
+    "area": "3000 sqft",
+    "location": "Chicago, IL",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "office",
+      "fitness center"
+    ],
+    "image": "https://i.ibb.co/DKyF1nk/pexels-expect-best-79873-323780.jpg",
+    "view_property": "https://example.com/downtown_loft"
+  },
+  {
+    "id": 5,
+    "estate_title": "Lakefront Mansion",
+    "segment_name": "Luxury",
+    "description": "A grand lakefront mansion with expansive gardens and private dock.",
+    "price": "$4,500,000",
+    "status": "sale",
+    "area": "8000 sqft",
+    "location": "Lake Tahoe, NV",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "boathouse",
+      "tennis court"
+    ],
+    "image": "https://i.ibb.co/cT8rJKV/pexels-clive-kim-2523249-4220966.jpg",
+    "view_property": "https://example.com/lakefront_mansion"
+  }
+]
