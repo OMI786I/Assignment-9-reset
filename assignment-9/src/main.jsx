@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             <DetailsInner></DetailsInner>
           </PrivateRoute>
         ),
-        loader: () => fetch(`data.json`),
+        loader: () => fetch(`/data.json`),
       },
     ],
   },
