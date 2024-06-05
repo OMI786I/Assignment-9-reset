@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getStoredListedData } from "./LocaleStore";
+import { getStoredListedData, removeListedData } from "./LocaleStore";
 
 const Wishlist = () => {
   const [listData, setListData] = useState([]);
@@ -19,6 +19,13 @@ const Wishlist = () => {
     }
   }, [data]);
   console.log(listData);
+
+  const handleRemove = (id) => {
+    removeListedData(id);
+    setListData((prevListData) =>
+      prevListData.filter((item) => item.id !== id)
+    );
+  };
 
   return (
     <div>
@@ -64,7 +71,12 @@ const Wishlist = () => {
                 </td>
                 <td>area: {data1.area}</td>
                 <th>
-                  <button className="btn btn-warning btn-xs">Remove</button>
+                  <button
+                    className="btn btn-warning btn-xs"
+                    onClick={() => handleRemove(data1.id)}
+                  >
+                    Remove
+                  </button>
                 </th>
               </tr>
             ))}

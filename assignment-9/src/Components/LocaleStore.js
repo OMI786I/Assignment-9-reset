@@ -15,4 +15,10 @@ const listedData = (id) => {
   }
 };
 
-export { getStoredListedData, listedData };
+const removeListedData = (id) => {
+  const storedListedData = getStoredListedData();
+  const updatedListedData = storedListedData.filter((listId) => listId != id);
+  localStorage.setItem("listed-Data", JSON.stringify(updatedListedData));
+};
+
+export { getStoredListedData, listedData, removeListedData };
