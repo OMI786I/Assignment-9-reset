@@ -1,13 +1,22 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import DocumentTitle from "./DocumentTitle";
-
+import { FcGoogle } from "react-icons/fc";
 const Login = () => {
   DocumentTitle("Deluxe | Login");
   const { signIn } = useContext(AuthContext);
+  const { googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleGoogle = () => {
+    googleSignIn().then((result) => {
+      console.log(result.user);
+      navigate(location?.state ? location.state : "/");
+    });
+  };
+
   const handleSignIn = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -27,14 +36,9 @@ const Login = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleSignIn}>
@@ -71,9 +75,19 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <p>Or signIn with</p>
+            <div className="flex">
+              <button className="btn" onClick={handleGoogle}>
+                <FcGoogle className="text-3xl" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      <p>Have not Registered yet?</p>
+      <Link to="/register">
+        <span className="text-green-800 font-bold"> Register NOW!</span>
+      </Link>
     </div>
   );
 };
