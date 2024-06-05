@@ -42,7 +42,7 @@ const Details = ({ data1 }) => {
           <div className="grid grid-cols-2 gap-3">
             {" "}
             {facilities.map((tag) => (
-              <div className=" border p-1 rounded-full px-3 bg-green-100 text-green-600">
+              <div className=" border p-1 rounded-full px-3 bg-green-100 text-green-600 text-[16px]">
                 {tag}
               </div>
             ))}
