@@ -1,4 +1,10 @@
 const Register = () => {
+  const handleRegitser = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+  };
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -12,12 +18,36 @@ const Register = () => {
             </p>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form className="card-body" onSubmit={handleRegitser}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input
+                  name="photo"
+                  type="photo url"
+                  placeholder="image"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
+                  name="email"
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
@@ -29,6 +59,7 @@ const Register = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
+                  name="password"
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
