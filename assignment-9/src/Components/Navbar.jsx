@@ -16,6 +16,11 @@ const Navbar = () => {
           Home
         </button>
       </NavLink>
+      <NavLink to="/update">
+        <button className="hover:border-green-500 border-transparent border-2 duration-150 hover:text-green-500 font-bold p-2 rounded-lg focus:border-green-500 focus:text-green-500">
+          Update Profile
+        </button>
+      </NavLink>
     </div>
   );
 
@@ -64,7 +69,7 @@ const Navbar = () => {
               </div>
             </Link>
           )}
-          {
+          {user ? (
             <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
               <div className="avatar">
                 <div className=" w-12 rounded-full">
@@ -72,11 +77,13 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          }
+          ) : (
+            <div></div>
+          )}
 
           <Link to="/register">
             <div className="navbar-end">
-              <a className="btn">Register</a>
+              <button className="btn">Register</button>
             </div>
           </Link>
         </div>
