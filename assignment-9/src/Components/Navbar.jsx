@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleSignOut = () => {
     logout();
   };
-
+  console.log(user);
   const navLink = (
     <div className="flex-row md:flex-col gap-6  ">
       <NavLink to="/">
@@ -52,24 +52,34 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
+        <div className="navbar-end ">
+          {user ? (
+            <button className="btn" onClick={handleSignOut}>
+              LogOut
+            </button>
+          ) : (
+            <Link to="/login">
+              <div className="navbar-end">
+                <a className="btn">Login</a>
+              </div>
+            </Link>
+          )}
+          {
+            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+              <div className="avatar">
+                <div className=" w-12 rounded-full">
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+            </div>
+          }
 
-        {user ? (
-          <button className="btn" onClick={handleSignOut}>
-            SignOut
-          </button>
-        ) : (
-          <Link to="/login">
+          <Link to="/register">
             <div className="navbar-end">
-              <a className="btn">Login</a>
+              <a className="btn">Register</a>
             </div>
           </Link>
-        )}
-
-        <Link to="/register">
-          <div className="navbar-end">
-            <a className="btn">Register</a>
-          </div>
-        </Link>
+        </div>
       </div>
     </div>
   );
