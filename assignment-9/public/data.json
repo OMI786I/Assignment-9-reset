@@ -5,7 +5,7 @@
     "segment_name": "Luxury",
     "description": "A stunning oceanfront villa with panoramic sea views and private beach access.",
     "price": "$3,500,000",
-    "status": "sale",
+    "status": "rent",
     "area": "5000 sqft",
     "location": "Malibu, CA",
     "facilities": [
@@ -81,7 +81,7 @@
     "segment_name": "Luxury",
     "description": "A grand lakefront mansion with expansive gardens and private dock.",
     "price": "$4,500,000",
-    "status": "sale",
+    "status": "rent",
     "area": "8000 sqft",
     "location": "Lake Tahoe, NV",
     "facilities": [

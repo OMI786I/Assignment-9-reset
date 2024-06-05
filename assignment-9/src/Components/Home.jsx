@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Banner from "./Banner";
+import Details from "./Details";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -15,6 +16,11 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10 ">
+        {data.map((data1) => (
+          <Details key={data1.id} data1={data1}></Details>
+        ))}
+      </div>
     </div>
   );
 };
