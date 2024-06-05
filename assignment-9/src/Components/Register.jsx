@@ -3,6 +3,11 @@ const Register = () => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    const name = form.get("name");
+    const photo = form.get("photo");
+    console.log(email, password, name, photo);
   };
 
   return (
@@ -37,7 +42,7 @@ const Register = () => {
                 </label>
                 <input
                   name="photo"
-                  type="photo url"
+                  type="url"
                   placeholder="image"
                   className="input input-bordered"
                 />
