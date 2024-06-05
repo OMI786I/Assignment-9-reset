@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import DocumentTitle from "./DocumentTitle";
 
 const Login = () => {
+  DocumentTitle("Deluxe | Login");
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();

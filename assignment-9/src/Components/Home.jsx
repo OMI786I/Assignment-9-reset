@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Banner from "./Banner";
 import Details from "./Details";
+import DocumentTitle from "./DocumentTitle";
 
 const Home = () => {
+  DocumentTitle("Deluxe");
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch("/data.json")

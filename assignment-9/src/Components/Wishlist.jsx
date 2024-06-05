@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { getStoredListedData, removeListedData } from "./LocaleStore";
+import DocumentTitle from "./DocumentTitle";
 
 const Wishlist = () => {
+  DocumentTitle("Deluxe | Wishlist");
+
   const [listData, setListData] = useState([]);
   const [data, setData] = useState([]);
   useEffect(() => {

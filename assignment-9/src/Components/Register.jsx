@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { updateProfile } from "firebase/auth";
+import DocumentTitle from "./DocumentTitle";
 
 const Register = () => {
+  DocumentTitle("Deluxe | Register");
   const { createUser } = useContext(AuthContext);
 
   const handleRegitser = (e) => {
