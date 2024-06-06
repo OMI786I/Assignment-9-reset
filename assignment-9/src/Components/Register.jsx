@@ -45,6 +45,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error("couldn't register.");
       });
   };
 

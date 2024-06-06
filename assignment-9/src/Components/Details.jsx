@@ -17,6 +17,7 @@ const Details = ({ data1 }) => {
     facilities,
     id,
     price,
+    segment_name,
   } = data1;
 
   return (
@@ -33,6 +34,9 @@ const Details = ({ data1 }) => {
 
         <p className="text-gray-700 mt-3 font-bold"> {description}</p>
         <div className=" border-t-2 border-b-2 p-1 mt-3 ">
+          <p className="mt-3">
+            <span className="font-bold ">Segment: </span> {segment_name}
+          </p>
           <p>
             <span className="font-bold">price:</span> {price}
           </p>

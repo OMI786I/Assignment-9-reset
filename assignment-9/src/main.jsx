@@ -12,11 +12,13 @@ import DetailsInner from "./Components/DetailsInner.jsx";
 import PrivateRoute from "./Components/PrivateRoute.jsx";
 import Wishlist from "./Components/Wishlist.jsx";
 import UpdatePro from "./Components/UpdatePro.jsx";
+import ErrorPage from "./Components/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

@@ -59,7 +59,7 @@
   {
     "id": 4,
     "estate_title": "Downtown Loft",
-    "segment_name": "Luxury",
+    "segment_name": "Semi-Luxury",
     "description": "A modern downtown loft with floor-to-ceiling windows and a contemporary design.",
     "price": "$1,900,000",
     "status": "sale",
@@ -78,7 +78,7 @@
   {
     "id": 5,
     "estate_title": "Lakefront Mansion",
-    "segment_name": "Luxury",
+    "segment_name": "Semi-Luxury",
     "description": "A grand lakefront mansion with expansive gardens and private dock.",
     "price": "$4,500,000",
     "status": "rent",

@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 const getStoredListedData = () => {
   const storedListedData = localStorage.getItem("listed-Data");
   if (storedListedData) {
@@ -12,6 +14,7 @@ const listedData = (id) => {
   if (!exists) {
     storedListedData.push(id);
     localStorage.setItem("listed-Data", JSON.stringify(storedListedData));
+    toast.success("added to wishlist");
   }
 };
 

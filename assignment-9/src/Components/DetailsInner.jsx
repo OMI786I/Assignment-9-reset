@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { listedData } from "./LocaleStore";
 import DocumentTitle from "./DocumentTitle";
+import toast, { Toaster } from "react-hot-toast";
 
 const DetailsInner = () => {
   const data = useLoaderData();
@@ -12,6 +13,7 @@ const DetailsInner = () => {
   DocumentTitle(`Deluxe | ${data2.estate_title}`);
   return (
     <div className="flex  md:flex-row flex-col gap-4 mt-10">
+      <Toaster></Toaster>
       <img
         src={data2.image}
         className=" md:max-w-[70%]  md:min-w-80 rounded-xl"
@@ -23,6 +25,9 @@ const DetailsInner = () => {
 
         <p className="mt-3">
           <span className="font-bold ">description: </span> {data2.description}
+        </p>
+        <p className="mt-3">
+          <span className="font-bold ">Segment: </span> {data2.segment_name}
         </p>
         <span className="font-bold">Facilities</span>
         <div className="grid grid-cols-3 gap-2 mt-3">
