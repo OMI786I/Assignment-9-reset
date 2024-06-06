@@ -29,7 +29,7 @@ const UpdatePro = () => {
   return (
     <div>
       <Toaster />
-      <div className="flex items-center">
+      <div className="flex flex-col md:flex-row items-center">
         <div>
           {user ? <img src={user.photoURL}></img> : ""}
           <div>
