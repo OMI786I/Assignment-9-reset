@@ -11,6 +11,7 @@ import AuthProvider from "./Components/AuthProvider.jsx";
 import DetailsInner from "./Components/DetailsInner.jsx";
 import PrivateRoute from "./Components/PrivateRoute.jsx";
 import Wishlist from "./Components/Wishlist.jsx";
+import UpdatePro from "./Components/UpdatePro.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/update",
+        element: <UpdatePro></UpdatePro>,
       },
       {
         path: "/data/:id",
