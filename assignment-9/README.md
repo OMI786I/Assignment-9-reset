@@ -1,6 +1,6 @@
 # Deluxe Luxury estates
 
-Live link : 
+Live link : https://reset-assignment-9.web.app
 
 ## 1.User can easily login with github,email and google
 
