@@ -1,6 +1,12 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Details = ({ data1 }) => {
+  useEffect(() => {
+    Aos.init({ duration: "1000" });
+  }, []);
+
   const {
     estate_title,
     image,
@@ -14,7 +20,10 @@ const Details = ({ data1 }) => {
   } = data1;
 
   return (
-    <div className="flex flex-col gap-11 mt-10 xl:w-96  border p-10 rounded-xl ">
+    <div
+      className="flex flex-col gap-11 mt-10 xl:w-96  border p-10 rounded-xl "
+      data-aos="fade-right"
+    >
       <div>
         <img src={image} className="  max-h-60 w-full rounded-xl"></img>
       </div>
