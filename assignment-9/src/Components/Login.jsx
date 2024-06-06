@@ -3,15 +3,26 @@ import { AuthContext } from "./AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import DocumentTitle from "./DocumentTitle";
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+
 const Login = () => {
   DocumentTitle("Deluxe | Login");
   const { signIn } = useContext(AuthContext);
   const { googleSignIn } = useContext(AuthContext);
+  const { githubSignIn } = useContext(AuthContext);
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const handleGoogle = () => {
     googleSignIn().then((result) => {
+      console.log(result.user);
+      navigate(location?.state ? location.state : "/");
+    });
+  };
+
+  const handleGitHub = () => {
+    githubSignIn().then((result) => {
       console.log(result.user);
       navigate(location?.state ? location.state : "/");
     });
@@ -76,9 +87,12 @@ const Login = () => {
               </div>
             </form>
             <p>Or signIn with</p>
-            <div className="flex">
+            <div className="flex gap-4">
               <button className="btn" onClick={handleGoogle}>
                 <FcGoogle className="text-3xl" />
+              </button>
+              <button className="btn" onClick={handleGitHub}>
+                <FaGithub className="text-3xl" />
               </button>
             </div>
           </div>
