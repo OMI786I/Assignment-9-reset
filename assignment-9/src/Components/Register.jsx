@@ -8,6 +8,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   DocumentTitle("Deluxe | Register");
+
   const { createUser } = useContext(AuthContext);
   const [showPassWord, setShowPassWord] = useState(false);
   const handleRegitser = (e) => {

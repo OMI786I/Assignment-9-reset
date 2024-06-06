@@ -25,11 +25,10 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUser = (name, image, email) => {
+  const updateUser = (name, image) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: image,
-      email: email,
     });
   };
 

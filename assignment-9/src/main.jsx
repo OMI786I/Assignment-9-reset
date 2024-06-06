@@ -32,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update",
-        element: <UpdatePro></UpdatePro>,
+        element: (
+          <PrivateRoute>
+            <UpdatePro></UpdatePro>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/data/:id",
