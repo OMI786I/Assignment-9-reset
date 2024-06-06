@@ -88,12 +88,6 @@ const Navbar = () => {
           ) : (
             <div></div>
           )}
-
-          <Link to="/register">
-            <div className="navbar-end">
-              <button className="btn">Register</button>
-            </div>
-          </Link>
         </div>
       </div>
     </div>
