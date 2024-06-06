@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import { updateProfile } from "firebase/auth";
 import DocumentTitle from "./DocumentTitle";
 
 import toast, { Toaster } from "react-hot-toast";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   DocumentTitle("Deluxe | Register");
   const { createUser } = useContext(AuthContext);
-
+  const [showPassWord, setShowPassWord] = useState(false);
   const handleRegitser = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -95,18 +96,23 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+                <div className="flex justify-center items-center">
+                  {" "}
+                  <input
+                    name="password"
+                    type={showPassWord ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered"
+                    required
+                  />
+                  <span onClick={() => setShowPassWord(!showPassWord)}>
+                    {showPassWord ? (
+                      <FaRegEye></FaRegEye>
+                    ) : (
+                      <FaRegEyeSlash></FaRegEyeSlash>
+                    )}
+                  </span>
+                </div>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>
