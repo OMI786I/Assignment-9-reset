@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "./AuthProvider";
+import DocumentTitle from "./DocumentTitle";
 
 const UpdatePro = () => {
+  DocumentTitle("Deluxe | Update");
   const [showPassWord, setShowPassWord] = useState(false);
   const { updateUser, user } = useContext(AuthContext);
 
