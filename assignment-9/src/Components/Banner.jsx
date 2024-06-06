@@ -40,7 +40,6 @@ const Banner = () => {
             className="w-full"
           />
         </SwiperSlide>
-        ...
       </Swiper>
     </div>
   );

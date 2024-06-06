@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Banner from "./Banner";
 import Details from "./Details";
 import DocumentTitle from "./DocumentTitle";
+import Leaflet from "./Leaflet";
 
 const Home = () => {
   DocumentTitle("Deluxe");
@@ -26,6 +27,7 @@ const Home = () => {
           <Details key={data1.id} data1={data1}></Details>
         ))}
       </div>
+      <Leaflet></Leaflet>
     </div>
   );
 };
