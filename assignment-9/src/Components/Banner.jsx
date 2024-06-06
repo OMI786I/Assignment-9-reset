@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 const Banner = () => {
   return (
-    <div className="flex justify-center mt-16">
+    <div className="flex justify-center  mt-36 md:mt-14">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}

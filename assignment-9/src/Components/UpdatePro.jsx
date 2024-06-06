@@ -10,6 +10,7 @@ const UpdatePro = () => {
   const { updateUser, user } = useContext(AuthContext);
 
   const handleUpdate = (e) => {
+    e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
 
@@ -19,7 +20,7 @@ const UpdatePro = () => {
 
     updateUser(name, photo)
       .then((result) => {
-        toast.success("You have successfully updated");
+        toast.success("You have successfully updated. Refresh to see changes");
         console.log(result);
       })
       .catch((error) => {
