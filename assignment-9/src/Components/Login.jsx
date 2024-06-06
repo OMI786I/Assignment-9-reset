@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   DocumentTitle("Deluxe | Login");
@@ -13,6 +14,7 @@ const Login = () => {
   const { googleSignIn } = useContext(AuthContext);
   const { githubSignIn } = useContext(AuthContext);
   const [showPassWord, setShowPassWord] = useState(false);
+  const [error, setError] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,6 +45,8 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
+        setError(error);
+        toast.error("Couldn't sign. Are you registered?");
         console.error(error);
       });
   };
@@ -50,6 +54,9 @@ const Login = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
+        <p>
+          <Toaster></Toaster>
+        </p>
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
